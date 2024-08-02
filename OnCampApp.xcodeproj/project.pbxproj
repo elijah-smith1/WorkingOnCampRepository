@@ -38,6 +38,11 @@
 		5DDFCC5C2B52EA5800F4630A /* FollowingFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCC5B2B52EA5800F4630A /* FollowingFeed.swift */; };
 		5DDFCC5E2B52EA6500F4630A /* SchoolFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCC5D2B52EA6500F4630A /* SchoolFeed.swift */; };
 		5DDFCC602B52EA8C00F4630A /* PublicFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDFCC5F2B52EA8C00F4630A /* PublicFeed.swift */; };
+		A62514242BAF2BDA0053EAB0 /* AllEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62514232BAF2BD90053EAB0 /* AllEvents.swift */; };
+		A62514262BAF2BE50053EAB0 /* TournamentEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62514252BAF2BE50053EAB0 /* TournamentEvents.swift */; };
+		A62514282BAF2BF00053EAB0 /* SchoolEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62514272BAF2BF00053EAB0 /* SchoolEvents.swift */; };
+		A625142A2BAF2BFB0053EAB0 /* PartyEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A62514292BAF2BFB0053EAB0 /* PartyEvents.swift */; };
+		A633C7FE2B6C651200CE7CF6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A633C7FD2B6C651200CE7CF6 /* AppState.swift */; };
 		A643F30E2AF996960063AF42 /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F30D2AF996960063AF42 /* Cart.swift */; };
 		A643F3102AF996B20063AF42 /* CartProductCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F30F2AF996B20063AF42 /* CartProductCard.swift */; };
 		A643F3122AF996C40063AF42 /* CategoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A643F3112AF996C40063AF42 /* CategoryList.swift */; };
@@ -153,6 +158,11 @@
 		5DDFCC5B2B52EA5800F4630A /* FollowingFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowingFeed.swift; sourceTree = "<group>"; };
 		5DDFCC5D2B52EA6500F4630A /* SchoolFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolFeed.swift; sourceTree = "<group>"; };
 		5DDFCC5F2B52EA8C00F4630A /* PublicFeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicFeed.swift; sourceTree = "<group>"; };
+		A62514232BAF2BD90053EAB0 /* AllEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEvents.swift; sourceTree = "<group>"; };
+		A62514252BAF2BE50053EAB0 /* TournamentEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TournamentEvents.swift; sourceTree = "<group>"; };
+		A62514272BAF2BF00053EAB0 /* SchoolEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolEvents.swift; sourceTree = "<group>"; };
+		A62514292BAF2BFB0053EAB0 /* PartyEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartyEvents.swift; sourceTree = "<group>"; };
+		A633C7FD2B6C651200CE7CF6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		A643F30D2AF996960063AF42 /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		A643F30F2AF996B20063AF42 /* CartProductCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartProductCard.swift; sourceTree = "<group>"; };
 		A643F3112AF996C40063AF42 /* CategoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryList.swift; sourceTree = "<group>"; };
@@ -322,6 +332,22 @@
 			path = SocialChatPreviews;
 			sourceTree = "<group>";
 		};
+		A62514222BAF2BAE0053EAB0 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				A6FBD2FA2ADEFD3700BC0F60 /* Social.swift */,
+				A69B73D12AEEF45A008DE77E /* EventPreview.swift */,
+				A62514232BAF2BD90053EAB0 /* AllEvents.swift */,
+				A69B73CD2AED5A55008DE77E /* Events.swift */,
+				A62514252BAF2BE50053EAB0 /* TournamentEvents.swift */,
+				A62514272BAF2BF00053EAB0 /* SchoolEvents.swift */,
+				A62514292BAF2BFB0053EAB0 /* PartyEvents.swift */,
+				A6807D5B2AF0934F0088E934 /* DetailedEvent.swift */,
+				A6807D592AF08FA60088E934 /* EventImageCaroseul.swift */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
 		A688034F2B5AE8D500E1B741 /* viewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,8 +470,8 @@
 				A6CBE8D22AD8F5F000379839 /* TabBar */,
 				A6CBE8C22AD8EE8800379839 /* Profile */,
 				A6CBE8D52AD8F64F00379839 /* CreatePost.swift */,
+				A62514222BAF2BAE0053EAB0 /* Social */,
 				5D8B1B0A2B3E2C4B00446692 /* Vendors */,
-				A6FBD2FA2ADEFD3700BC0F60 /* Social.swift */,
 				A6FBD2FC2ADF015000BC0F60 /* Notifications.swift */,
 			);
 			path = MainViews;
@@ -460,9 +486,6 @@
 				A6FBD3112ADF3D5F00BC0F60 /* CustomChatInput.swift */,
 				A6FBD3192AE758D700BC0F60 /* DetailedCommentCell.swift */,
 				A6FBD3172AE7588400BC0F60 /* DetailedPostCell.swift */,
-				A69B73CD2AED5A55008DE77E /* Events.swift */,
-				A6807D592AF08FA60088E934 /* EventImageCaroseul.swift */,
-				A69B73D12AEEF45A008DE77E /* EventPreview.swift */,
 				A6EB1C5D2AD4C3B000A7A89F /* imagePicker.swift */,
 				A6FBD3002ADF0EB100BC0F60 /* MessageCell.swift */,
 				A6CBE8CE2AD8EFCE00379839 /* PostCell.swift */,
@@ -470,7 +493,6 @@
 				A6CBE8D02AD8F09100379839 /* UserChatCell.swift */,
 				5D3AA09C2B0912A400AB8517 /* UserCell.swift */,
 				A6CBE8E72ADB6DDC00379839 /* usernameSearch.swift */,
-				A6807D5B2AF0934F0088E934 /* DetailedEvent.swift */,
 				A643F30D2AF996960063AF42 /* Cart.swift */,
 				A643F30F2AF996B20063AF42 /* CartProductCard.swift */,
 				A6FBD3152AE74B3F00BC0F60 /* DetailedPosts.swift */,
@@ -518,6 +540,7 @@
 				A643F3192AF9973B0063AF42 /* Product.swift */,
 				A643F31B2AF9974C0063AF42 /* CategoryModel.swift */,
 				5D864B5F2B04047200B7BB7F /* VendorData.swift */,
+				A633C7FD2B6C651200CE7CF6 /* AppState.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -616,7 +639,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					A6EB1C042AD3310600A7A89F = {
 						CreatedOnToolsVersion = 14.3;
@@ -688,12 +711,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				A688034E2B5AD7B000E1B741 /* DeleteAccountButton.swift in Sources */,
+				A62514262BAF2BE50053EAB0 /* TournamentEvents.swift in Sources */,
 				5DDFCC602B52EA8C00F4630A /* PublicFeed.swift in Sources */,
 				A6807D5C2AF0934F0088E934 /* DetailedEvent.swift in Sources */,
 				A6A2B9EC2B587951004BA4AA /* SideMenuHeader.swift in Sources */,
 				5D3AA09D2B0912A400AB8517 /* UserCell.swift in Sources */,
 				A6FBD3052ADF148E00BC0F60 /* CreateMessage.swift in Sources */,
 				A69B73D22AEEF45A008DE77E /* EventPreview.swift in Sources */,
+				A625142A2BAF2BFB0053EAB0 /* PartyEvents.swift in Sources */,
 				5D415D962AFA811400D22779 /* FeedViewModel.swift in Sources */,
 				A6CBE8CB2AD8EF2600379839 /* ProfileTabFilter.swift in Sources */,
 				5DDFCC5C2B52EA5800F4630A /* FollowingFeed.swift in Sources */,
@@ -710,10 +735,12 @@
 				A6A2B9EE2B587968004BA4AA /* SideMenuOptions.swift in Sources */,
 				5D415D9B2AFAAD1800D22779 /* ProfileViewModel.swift in Sources */,
 				A69B73CE2AED5A55008DE77E /* Events.swift in Sources */,
+				A633C7FE2B6C651200CE7CF6 /* AppState.swift in Sources */,
 				A6CBB1782ADE3B16001437C7 /* Messages.swift in Sources */,
 				A6FBD3122ADF3D6000BC0F60 /* CustomChatInput.swift in Sources */,
 				A6CBE8E02AD8FAE600379839 /* PostData.swift in Sources */,
 				A6EB1C092AD3310600A7A89F /* OnCampAppApp.swift in Sources */,
+				A62514242BAF2BDA0053EAB0 /* AllEvents.swift in Sources */,
 				A68803482B5ACF6A00E1B741 /* Spotlight.swift in Sources */,
 				A643F3162AF997020063AF42 /* ProductCard.swift in Sources */,
 				A6FBD30C2ADF258B00BC0F60 /* ChatBubble.swift in Sources */,
@@ -738,6 +765,7 @@
 				5D7E6D632AFAE7090020D9EA /* LaunchView.swift in Sources */,
 				A6CBE8CF2AD8EFCE00379839 /* PostCell.swift in Sources */,
 				A69B73CC2AEC0E00008DE77E /* ProfileHeaderCell.swift in Sources */,
+				A62514282BAF2BF00053EAB0 /* SchoolEvents.swift in Sources */,
 				A6A2B9EA2B587668004BA4AA /* Menu.swift in Sources */,
 				A688034A2B5ACF7500E1B741 /* BulletinBoard.swift in Sources */,
 				A6CBE8D42AD8F5FE00379839 /* TabBar.swift in Sources */,
@@ -849,6 +877,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -863,7 +892,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -909,6 +938,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -917,7 +947,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -1008,7 +1038,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6SKK4TJK7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Smith-And-Washington-Digital-Design-LLC.OnCampAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1028,7 +1058,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = X6SKK4TJK7;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "Smith-And-Washington-Digital-Design-LLC.OnCampAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

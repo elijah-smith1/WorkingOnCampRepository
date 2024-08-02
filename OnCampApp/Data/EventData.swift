@@ -19,6 +19,8 @@ struct Event: Identifiable {
     var ticketLinks: [String]
     var imageUrls: [String]?
     var features: [String]
+    var isSponsored: Bool = false
+    var isFeatured: Bool = false
     // Add other relevant properties here
 }
 

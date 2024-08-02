@@ -19,7 +19,7 @@ class eventViewModel: ObservableObject {
     }
 
     // Asynchronously fetch events
-    private func fetchEvents() async {
+    func fetchEvents() async {
         do {
             let eventIds = try await eventData.fetchEventIds()
             var fetchedEvents: [Event] = []

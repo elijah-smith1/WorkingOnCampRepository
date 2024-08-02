@@ -1,18 +1,32 @@
 import SwiftUI
+import FirebaseFirestore
+import Kingfisher
 
 struct Social: View {
-    let categories = ["All", "Tournament", "School", "Parties"]
+    @StateObject var viewModel = eventViewModel()
     @State private var selectedCategoryIndex = 0
     @State private var showingSearchView = false
-    @State private var messageNotificationCount = 2 // Example count, update with real data
-    @State private var notificationCount = 5 // Example count, update with real data
+    @State private var messageNotificationCount = 2
+    @State private var notificationCount = 5
+
+    let categories = ["All", "Tournament", "School", "Parties"]
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack {
                     featuredEventsTitle
-                    instagramStyleCircles
+                    if let featuredEvent = viewModel.events.first(where: { $0.isFeatured }) {
+                        instagramStyleBox(for: featuredEvent)
+                    }
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 15) {
+                            ForEach(viewModel.events.filter { $0.isSponsored }) { event in
+                                instagramStyleBox(for: event)
+                            }
+                        }
+                        .padding(.horizontal)
+                    }
                     categoryPicker
                     contentSwitcherView
                 }
@@ -22,7 +36,7 @@ struct Social: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarLeading) {
-                    NavigationLink(destination: MessagesView()) {
+                    NavigationLink(destination: Messages()) {
                         BadgeView(iconName: "message", count: messageNotificationCount)
                     }
                 }
@@ -41,8 +55,17 @@ struct Social: View {
                 Search() // Ensure this view exists and is correct
             }
         }
+        .onAppear {
+            Task{
+                do{
+                    try await  viewModel.fetchEvents()
+                }
+            }
+           
+        }
     }
 
+    // MARK: - View Components
     var featuredEventsTitle: some View {
         Text("Featured Events")
             .font(.title)
@@ -50,16 +73,29 @@ struct Social: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding()
     }
-    
-    var instagramStyleCircles: some View {
-        HStack {
-            ForEach(0..<3) { _ in
-                Circle()
-                    .frame(width: 60, height: 60)
-                    .overlay(Circle().stroke(Color.blue, lineWidth: 2))
+
+    func instagramStyleBox(for event: Event) -> some View {
+        NavigationLink(destination: DetailView(event: event)) {
+            VStack {
+                if let imageUrl = event.imageUrls?.first, let url = URL(string: imageUrl) {
+                    KFImage(url)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 120, height: 160)
+                        .cornerRadius(10)
+                }
+                Text(event.title)
+                    .fontWeight(.medium)
+                    .foregroundColor(.primary)
             }
+            .padding(.vertical, 5)
+            .background(Color.white) // Optional: for better visibility
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(event.isFeatured ? Color.purple : event.isSponsored ? Color.yellow : Color.clear, lineWidth: 4)
+            )
         }
-        .padding(.horizontal)
     }
 
     var categoryPicker: some View {
@@ -76,13 +112,13 @@ struct Social: View {
         Group {
             switch selectedCategoryIndex {
             case 0:
-                Events()
+                AllEvents()
             case 1:
-                Trending()
+                TournamentEvents()
             case 2:
-                Spotlight()
+                SchoolEvents() // Make sure this is the correct initializer
             case 3:
-                BulletinBoard()
+                PartyEvents() // Make sure this is the correct initializer
             default:
                 EmptyView()
             }
@@ -103,6 +139,16 @@ struct Social: View {
                 .stroke(lineWidth: 1)
                 .foregroundColor(.blue))
         }
+    }
+}
+
+// MARK: - Supporting Views (Assuming these are already defined or placeholders for your real views)
+struct DetailView: View {
+    var event: Event
+
+    var body: some View {
+        // Implement your detailed view content here
+        Text("Detail view for \(event.title)")
     }
 }
 

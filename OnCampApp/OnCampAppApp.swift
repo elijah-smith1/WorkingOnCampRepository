@@ -66,6 +66,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
 struct OnCampAppApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject var userData = UserData()
+    var appState = AppState()
 
     var body: some Scene {
         WindowGroup {
@@ -73,6 +74,7 @@ struct OnCampAppApp: App {
                 /*Signoutbutton*/
                 tabBar()
                     .environmentObject(UserData())
+                    .environmentObject(appState)
                 // Use the existing userData
             } else {
                 Landing()

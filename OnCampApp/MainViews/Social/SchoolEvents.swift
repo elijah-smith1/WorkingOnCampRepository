@@ -8,8 +8,25 @@
 import SwiftUI
 
 struct SchoolEvents: View {
+    @ObservedObject var viewmodel = eventViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            ScrollView {
+                LazyVStack(spacing: 32) {
+                    ForEach(viewmodel.events, id: \.id) { events in
+                        NavigationStack{
+                            EventPreview()
+                                .frame(height: 400)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                            Divider()
+                        }
+                    }
+                }
+            }
+            .navigationDestination(for: Int.self) { events in
+                Text("events")
+            }
+        }
     }
 }
 
