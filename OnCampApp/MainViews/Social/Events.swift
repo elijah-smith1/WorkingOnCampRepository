@@ -12,10 +12,6 @@ struct Events: View {
     var body: some View {
         NavigationStack {
             ScrollView {
-                Text("Events")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("LTBL"))
                 LazyVStack(spacing: 32) {
                     ForEach(viewmodel.events, id: \.id) { events in
                         NavigationStack{
